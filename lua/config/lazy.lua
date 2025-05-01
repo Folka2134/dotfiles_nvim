@@ -15,6 +15,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  opt = {
+    { "<M-j>", false },
+    { "<M-k>", false },
+    { "<M-h>", false },
+    { "<M-l>", false },
+    { "<A-j>", false },
+    { "<A-k>", false },
+    { "<A-h>", false },
+    { "<A-l>", false },
+  },
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },

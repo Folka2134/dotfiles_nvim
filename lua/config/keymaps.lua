@@ -3,6 +3,16 @@
 -- Add any additional keymaps here
 local keymap = vim.keymap -- for conciseness
 
+-- Move to window using the <atl> hjkl keys
+keymap.set("n", "<A-h>", "<C-w>h", { desc = "Go to Left Window" })
+keymap.set("n", "<A-j>", "<C-w>j", { desc = "Go to Lower Window" })
+keymap.set("n", "<A-k>", "<C-w>k", { desc = "Go to Upper Window" })
+keymap.set("n", "<A-l>", "<C-w>l", { desc = "Go to Right Window" })
+keymap.set("t", "<A-h>", "<C-\\><C-n><C-w>h", { desc = "Go to Left Window" })
+keymap.set("t", "<A-j>", "<C-\\><C-n><C-w>j", { desc = "Go to Lower Window" })
+keymap.set("t", "<A-k>", "<C-\\><C-n><C-w>k", { desc = "Go to Upper Window" })
+keymap.set("t", "<A-l>", "<C-\\><C-n><C-w>l", { desc = "Go to Right Window" })
+
 -- Move Lines
 keymap.set("n", "<A-J>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
 keymap.set("n", "<A-K>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
@@ -16,7 +26,6 @@ keymap.set("i", "jk", "<ESC>", { desc = "which_key_ignore" })
 keymap.set("v", "jk", "<ESC>", { desc = "which_key_ignore" })
 keymap.set("s", "jk", "<ESC>", { desc = "which_key_ignore" })
 keymap.set("x", "jk", "<ESC>", { desc = "which_key_ignore" })
-keymap.set("c", "jk", "<ESC>", { desc = "which_key_ignore" })
 keymap.set("o", "jk", "<ESC>", { desc = "which_key_ignore" })
 keymap.set("t", "jk", "<ESC>", { desc = "which_key_ignore" })
 keymap.set("i", "JK", "<ESC>", { desc = "which_key_ignore" })
@@ -45,8 +54,23 @@ keymap.set("n", "[<tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 -- Noice
 -- keymap.set("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
 
--- Go to error
-keymap.set("n", "<leader>e", "<cmd>GoIfErr<cr>", { silent = true, noremap = true })
+-- Visual mode mappings
+keymap.set("v", "p", '"_dP', { desc = "Paste without yanking selected text" })
+keymap.set("v", "d", '"_d', { desc = "Delete without yanking" })
+keymap.set("v", "D", '"_D', { desc = "Delete to end without yanking" })
+keymap.set("v", "x", '"_x', { desc = "Delete character without yanking" })
+keymap.set("v", "c", '"_c', { desc = "Change without yanking" })
+
+-- Normal mode basic operations
+-- keymap.set("n", "dd", '"_dd', { desc = "Delete line without yanking" })
+keymap.set("n", "D", '"_D', { desc = "Delete to end without yanking" })
+keymap.set("n", "x", '"_x', { desc = "Delete character without yanking" })
+keymap.set("n", "X", '"_X', { desc = "Delete character before cursor without yanking" })
+
+-- For operator-pending commands like 'ciw', remap the operators
+keymap.set("n", "c", '"_c', { desc = "Change without yanking" })
+keymap.set("n", "C", '"_C', { desc = "Change to end without yanking" })
+keymap.set("n", "d", '"_d', { desc = "Delete without yanking" })
 
 -- Floating terminal
 keymap.set("n", "<leader>t", function()
@@ -69,7 +93,3 @@ keymap.set("n", "<leader>fq", function()
     vim.notify(err, vim.log.levels.ERROR)
   end
 end, { desc = "Quickfix List" })
-
--- fzf
--- vim.api.nvim_set_keymap("i", "<Tab>", "<C-n>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("i", "<S-Tab>", "<C-p>", { noremap = true, silent = true })
