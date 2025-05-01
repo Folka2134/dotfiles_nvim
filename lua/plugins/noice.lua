@@ -2,15 +2,15 @@ return {
   "folke/noice.nvim",
   keys = {
     -- {
-    --   "<C-n>",
     --   function()
+    --   "<C-n>",
     --     if not require("noice.lsp").scroll(4) then
     --       return "<C-n>"
     --     end
     --   end,
     --   silent = true,
-    --   expr = true,
     --   desc = "Scroll Forward",
+    --   expr = true,
     --   mode = { "i", "n", "s" },
     --   "C-f",
     --   false,

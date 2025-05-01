@@ -10,12 +10,6 @@ keymap.set("i", "<A-J>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
 keymap.set("i", "<A-K>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 keymap.set("v", "<A-J>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
 keymap.set("v", "<A-K>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
--- keymap.set({ "n", "i", "v", "s", "x", "c", "o", "t" }, "<A-j>", "<Down>", { desc = "Move Down" })
--- keymap.set({ "n", "i", "v", "s", "x", "c", "o", "t" }, "<A-k>", "<Up>", { desc = "Move Up" })
--- keymap.set({ "n", "i", "v" }, "<A-j>", "<Down>")
--- keymap.set({ "n", "i", "v" }, "<A-k>", "<Up>")
--- vim.keymap.del({ "n", "i", "v" }, "<A-j>")
--- vim.keymap.del({ "n", "i", "v" }, "<A-k>")
 
 -- Escape with jk
 keymap.set("i", "jk", "<ESC>", { desc = "which_key_ignore" })
@@ -32,26 +26,24 @@ keymap.set("x", "JK", "<ESC>", { desc = "which_key_ignore" })
 keymap.set("c", "JK", "<ESC>", { desc = "which_key_ignore" })
 keymap.set("o", "JK", "<ESC>", { desc = "which_key_ignore" })
 keymap.set("t", "JK", "<ESC>", { desc = "which_key_ignore" })
--- Move line and center
 
+-- Move line and center
 keymap.set("n", "<A-d>", "<Cmd>normal! <C-d>zz<CR>", { desc = "Move line down and center" })
 keymap.set("n", "<A-f>", "<Cmd>normal! <C-u>zz<CR>", { desc = "Move line up and center" })
 keymap.set("n", "ð", "<Cmd>normal! <C-d>zz<CR>", { desc = "Move line down and center" })
 keymap.set("n", "đ", "<Cmd>normal! <C-u>zz<CR>", { desc = "Move line up and center" })
 keymap.set("n", "G", "<Cmd>normal! Gzz<CR>", { desc = "Move to bottom and center" })
 
+-- Move to search and center
+keymap.set("n", "<Tab>", "<Cmd>normal! nzz<CR>", { desc = "Move to next found and center" })
+keymap.set("n", "<S-Tab>", "<Cmd>normal! Nzz<CR>", { desc = "Move to previous found and center" })
+
 -- Change tab
 keymap.set("n", "]<tab>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 keymap.set("n", "[<tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
--- save file
--- keymap.set({ "i", "x", "n", "s" }, "<leader>s", "<cmd>w<cr><esc>", { desc = "Save File" })
-
--- Remap for dealing with word wrap
--- vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
--- vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = >true, silent = true })
 
 -- Noice
-keymap.set("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
+-- keymap.set("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
 
 -- Go to error
 keymap.set("n", "<leader>e", "<cmd>GoIfErr<cr>", { silent = true, noremap = true })
