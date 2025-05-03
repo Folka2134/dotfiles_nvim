@@ -3,23 +3,13 @@
 -- Add any additional keymaps here
 local keymap = vim.keymap -- for conciseness
 
--- Move to window using the <atl> hjkl keys
-keymap.set("n", "<A-h>", "<C-w>h", { desc = "Go to Left Window" })
-keymap.set("n", "<A-j>", "<C-w>j", { desc = "Go to Lower Window" })
-keymap.set("n", "<A-k>", "<C-w>k", { desc = "Go to Upper Window" })
-keymap.set("n", "<A-l>", "<C-w>l", { desc = "Go to Right Window" })
-keymap.set("t", "<A-h>", "<C-\\><C-n><C-w>h", { desc = "Go to Left Window" })
-keymap.set("t", "<A-j>", "<C-\\><C-n><C-w>j", { desc = "Go to Lower Window" })
-keymap.set("t", "<A-k>", "<C-\\><C-n><C-w>k", { desc = "Go to Upper Window" })
-keymap.set("t", "<A-l>", "<C-\\><C-n><C-w>l", { desc = "Go to Right Window" })
-
 -- Move Lines
-keymap.set("n", "<A-J>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
-keymap.set("n", "<A-K>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
-keymap.set("i", "<A-J>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
-keymap.set("i", "<A-K>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
-keymap.set("v", "<A-J>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
-keymap.set("v", "<A-K>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
+keymap.set("n", "<A-S-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
+keymap.set("n", "<A-S-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
+keymap.set("i", "<A-S-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+keymap.set("i", "<A-S-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+keymap.set("v", "<A-S-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
+keymap.set("v", "<A-S-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
 -- Escape with jk
 keymap.set("i", "jk", "<ESC>", { desc = "which_key_ignore" })
