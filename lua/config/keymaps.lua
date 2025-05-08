@@ -67,6 +67,10 @@ keymap.set("n", "<leader>t", function()
   -- Snacks.terminal(nil, { cwd = LazyVim.root() })
   Snacks.terminal()
 end, { desc = "Terminal (Root Dir)" })
+-- Toggle terminal
+keymap.set({ "n", "v", "t" }, "<A-/>", function()
+  Snacks.terminal()
+end, { desc = "Toggle Terminal" })
 
 -- location list
 keymap.set("n", "<leader>fl", function()
