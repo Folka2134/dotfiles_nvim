@@ -142,6 +142,7 @@ return {
         "vim",
         "yaml",
         "php",
+        "c_sharp",
       },
     },
   },
@@ -156,6 +157,7 @@ return {
       vim.list_extend(opts.ensure_installed, {
         "tsx",
         "typescript",
+        "c_sharp",
       })
     end,
   },
@@ -199,6 +201,7 @@ return {
         "shellcheck",
         "shfmt",
         "flake8",
+        "omnisharp",
       },
     },
   },
