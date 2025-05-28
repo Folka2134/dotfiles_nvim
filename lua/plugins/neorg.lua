@@ -1,0 +1,46 @@
+return {
+  -- "nvim-neorg/neorg",
+  -- build = ":Neorg sync-parsers",
+  -- dependencies = {
+  --   "nvim-lua/plenary.nvim",
+  --   "nvim-neorg/neorg-telescope",
+  -- },
+  -- lazy = false,
+  -- config = function()
+  --   -- Setup Neorg
+  --   require("neorg").setup({
+  --     load = {
+  --       ["core.defaults"] = {}, -- Default settings
+  --       ["core.keybinds"] = {
+  --         config = {
+  --           neorg_leader = " ", -- Change local leader key here
+  --         },
+  --       },
+  --       ["core.summary"] = {},
+  --       ["core.concealer"] = {}, -- Pretty icons and UI enhancements
+  --       ["core.dirman"] = {
+  --         config = {
+  --           neorg_leader = " ",
+  --           workspaces = {
+  --             notes = "~/neorg",
+  --             programming = "~/Programming/notes/",
+  --           },
+  --           default_workspace = "programming",
+  --         },
+  --       },
+  --     },
+  --   })
+  --   vim.keymap.set("n", "<leader>oc", "<Cmd>Neorg toc<CR>", { desc = "Neorg Table of Content" })
+  --   vim.keymap.set("n", "<leader>on", "<Plug>(neorg.dirman.new-note)", { desc = "Neorg New Note" })
+  --   vim.keymap.set("n", "<leader>os", "<Cmd>Neorg generate-workspace-summary<CR>", { desc = "Neorg Generate summary" })
+  --   vim.keymap.set("n", "<leader>om", "<Cmd>Neorg inject-metadata<CR>", { desc = "Neorg Metadata" })
+  --   vim.keymap.set("n", "<leader>oj", "<Cmd>Neorg journal<CR>", { desc = "Neorg Journal" })
+  --   vim.keymap.set("n", "<leader>or", "<Cmd>Neorg return<CR>", { desc = "Neorg Journal" })
+  --   -- vim.keymap.set("n", "<leader>ot", "<Plug>(neorg.dirman.new-note)")
+  --   -- Add keymap for <leader>nt to open Neorg index or workspace
+  --   -- vim.keymap.set("n", "<leader>ot", "za", {})
+  --   -- vim.keymap.set("n", "<leader>oc", "gO", {})
+  --   -- vim.keymap.set("n", "<leader>on", "nn", {})
+  --   -- vim.keymap.set("n", "<leader>nt", "<cmd>Neorg workspace notes<CR>", { desc = "Neorg: Open Notes Workspace" }
+  -- end,
+}

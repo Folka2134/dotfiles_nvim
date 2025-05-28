@@ -1,3 +1,4 @@
+-- REMOVE:
 -- - Function to perform the completion at word end
 local function complete_at_word_end()
   -- Check if we're already at the end of a word

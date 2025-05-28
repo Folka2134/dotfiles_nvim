@@ -3,11 +3,14 @@ return {
   recommended = true,
   "folke/snacks.nvim",
   opts = {
+    lazygit = {
+      -- your lazygit configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
     explorer = {
       win = {
-        list = {
-          keys = {},
-        },
+        list = {},
       },
     },
     picker = {
@@ -21,6 +24,7 @@ return {
             ["<a-v>"] = { "edit_vsplit", mode = { "i", "n" } },
             ["<a-q>"] = { "close", mode = { "i", "n" } },
             -- ["<a-Tab>"] = { "cycle_win", mode = { "i", "n" } },
+            -- { "<leader>n", false },
           },
         },
         list = {
@@ -81,6 +85,7 @@ return {
     --   desc = "Explorer Snacks (root dir)",
     -- },
     { "<Tab>", false },
+    { "<leader>n", false },
     -- { "<leader>e", false },
     -- { "<leader>E", false },
   },

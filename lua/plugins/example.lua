@@ -1,3 +1,4 @@
+-- TODO: Cleanup
 -- since this is just an example spec, don't actually load anything here and return an empty spec
 -- stylua: ignore
 if true then return {} end
@@ -143,6 +144,8 @@ return {
         "yaml",
         "php",
         "c_sharp",
+        "norg",
+        "norg_meta",
       },
     },
   },
@@ -191,18 +194,4 @@ return {
 
   -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
   { import = "lazyvim.plugins.extras.lang.json" },
-
-  -- add any tools you want to have installed below
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "stylua",
-        "shellcheck",
-        "shfmt",
-        "flake8",
-        "omnisharp",
-      },
-    },
-  },
 }

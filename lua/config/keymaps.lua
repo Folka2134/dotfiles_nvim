@@ -24,13 +24,17 @@ keymap.set("n", "ð", "<Cmd>normal! <C-d>zz<CR>", { desc = "Move line down and c
 keymap.set("n", "đ", "<Cmd>normal! <C-u>zz<CR>", { desc = "Move line up and center" })
 keymap.set("n", "G", "<Cmd>normal! Gzz<CR>", { desc = "Move to bottom and center" })
 
+-- TODO:
 -- Move to search and center
-keymap.set("n", "n", "<Cmd>normal! nzz<CR>", { desc = "Move to next found and center" })
-keymap.set("n", "n", "<Cmd>normal! Nzz<CR>", { desc = "Move to previous found and center" })
+-- keymap.set("n", "n", "<Cmd>normal! nzz<CR>", { desc = "Move to next found and center" })
+-- keymap.set("n", "N", "<Cmd>normal! Nzz<CR>", { desc = "Move to previous found and center" })
 
 -- Change tab
 keymap.set("n", "]<tab>", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 keymap.set("n", "[<tab>", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
+
+-- Expand/Collapse fold
+keymap.set("n", "t", "za", { noremap = true, silent = true })
 
 -- Noice
 -- keymap.set("n", "<leader>nn", ":Noice dismiss<CR>", { noremap = true })
@@ -71,6 +75,7 @@ keymap.set("n", "<leader>fl", function()
   end
 end, { desc = "Location List" })
 
+-- TODO:Fix?
 -- quickfix list
 keymap.set("n", "<leader>cq", function()
   local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
