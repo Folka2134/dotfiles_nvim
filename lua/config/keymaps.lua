@@ -84,6 +84,10 @@ keymap.set("n", "<leader>cq", function()
   end
 end, { desc = "Quickfix List" })
 
+-- Buffers
+-- Close current buffer
+vim.keymap.set("n", "<A-w>", "<cmd>bdelete<cr>", { desc = "Delete Buffer" })
+
 -- Go to specific buffers by number (REPLACED BY BUFFERLINE)
 -- for i = 1, 9 do
 --   keymap.set("n", "<A-" .. i .. ">", function()
